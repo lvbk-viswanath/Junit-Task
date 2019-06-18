@@ -27,37 +27,33 @@ public class TestRemover {
 	@Test
 	void testFirstChar()
 	{
-		setUp();
-		String act=rem.remove("ABCD");
-		assertEquals("BCD",act);
+		assertEquals("BCD",rem.remove("ABCD"));
 	}
 	
 	@Test
-	void testSecondChar() {
-		setUp();
-		String act=rem.remove("BACD");
-		assertEquals("BCD",act);
+	void testSecondChar() 
+	{
+		assertEquals("BCD",rem.remove("BACD"));
 	}
 	
 	@Test
-	void testTwoChar() {
-		setUp();
-		String act=rem.remove("AACD");  // AABAA if input then BAA is output
-		assertEquals("CD",act);         // AA if input then empty string is output
+	void testTwoChar() 
+	{
+		// AA if input then empty string is output
+		// AABAA if input then BAA is output
+		assertEquals("CD",rem.remove("AACD"));         
 	}
 	
 	@Test
-	void testNoChar() {
-		setUp();
-		String act=rem.remove("BBAA");
-		assertEquals("BBAA",act);
+	void testNoChar() 
+	{
+		assertEquals("BBAA",rem.remove("BBAA"));
 	}
 	
 	@Test
-	void testSingleChar() {
-		setUp();
-		String act=rem.remove("A");
-		assertEquals("",act);
+	void testSingleChar() 
+	{
+		assertEquals("",rem.remove("A"));
 	}
 	
 }

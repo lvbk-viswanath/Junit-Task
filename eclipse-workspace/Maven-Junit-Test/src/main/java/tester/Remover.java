@@ -4,30 +4,27 @@ public class Remover {
 
 	public String remove(String s)
 	{
-		int len=s.length();
-		String ret="";
-		if(len==1)
+		if(s.length()==1)
 		{
 			if(s.equals("A"))
-				ret="";
+				return "";
 			else 
-				ret=s;
+				return s;
 		}
-		else if(len>1)
+		else if(s.length()>1)
 		{
 			if(s.charAt(0)=='A' && s.charAt(1)!='A')
-				ret=s.substring(1,len);
+				return s.substring(1,s.length());
 			
 			else if(s.charAt(0)!='A' && s.charAt(1)=='A')
-				ret=s.charAt(0)+s.substring(2,len);
+				return s.charAt(0)+s.substring(2,s.length());
 			
 			else if(s.charAt(0)=='A' && s.charAt(1)=='A')
-				ret=s.substring(2,len);
+				return s.substring(2,s.length());
 			
-			else
-				ret=s;
+			else return s;
 		}
-		return ret;
+		return s;
 	}
 	
 }
